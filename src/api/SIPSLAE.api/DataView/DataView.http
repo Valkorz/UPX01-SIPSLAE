@@ -1,0 +1,6 @@
+@DataView_HostAddress = http://localhost:5107
+
+GET {{DataView_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
