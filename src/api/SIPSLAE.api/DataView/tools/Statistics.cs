@@ -9,7 +9,7 @@ namespace tools{
 
     public static class Statistics{
         
-        public const double Treshold = 5.0;
+        public const double Treshold = 10.0;
         public static async Task<double> OverflowFrequency(DbSet<MonitorBacklog> database)
         {
             var records = await database.ToListAsync();

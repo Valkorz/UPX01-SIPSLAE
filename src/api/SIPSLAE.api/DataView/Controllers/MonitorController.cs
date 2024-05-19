@@ -55,7 +55,7 @@ namespace DataView.Controllers
         [HttpPost("post")]
         public async Task<ActionResult<MonitorBacklog>> Post(MonitorBacklog item){
             item.TimeOfRecord = DateTime.Now;
-            item.Id = _context.logs.Count();
+            //item.Id = _context.logs.Count();
             _context.logs.Add(item);
             await _context.SaveChangesAsync();
 
