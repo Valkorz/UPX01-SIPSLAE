@@ -1,4 +1,4 @@
-using Tasks.Controllers;
+using DataView.Controllers;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Sqlite;
@@ -6,8 +6,8 @@ using Microsoft.EntityFrameworkCore.Design;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddDbContext<TaskContext>(options =>
-    options.UseSqlite(builder.Configuration.GetConnectionString("TaskContext")));
+builder.Services.AddDbContext<MonitorContext>(options =>
+    options.UseSqlite(builder.Configuration.GetConnectionString("MonitorContext")));
 
 // Add services to the container.
 builder.Services.AddControllers();
