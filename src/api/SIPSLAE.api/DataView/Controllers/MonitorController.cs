@@ -46,16 +46,28 @@ namespace DataView.Controllers
             return await _context.logs.ToListAsync();
         }
 
-        [HttpGet("getFrequency")]
-        public async Task<ActionResult> GetFrequency(){
+        [HttpGet("frequency")]
+        public async Task<double> GetFrequency(){
             double frequency = await Statistics.OverflowFrequency(_context.logs);
-            return Content($"Overflow frequency: {frequency}%");
+            return frequency;
+        }
+
+        [HttpGet("average")]
+        public async Task<double> GetAverage([FromQuery] int fromLast){
+            var items = await _context.logs.ToListAsync();
+            double avg = 0;
+            for(int i = items.Count() - fromLast; i < items.Count(); i++){
+                avg += (double)items[i].WaterLevel >= Statistics.Treshold? 0 : (double)items[i].WaterLevel;
+            }
+
+            avg /= (double)fromLast;
+            return avg;
         }
 
         [HttpPost("post")]
         public async Task<ActionResult<MonitorBacklog>> Post(MonitorBacklog item){
             item.TimeOfRecord = DateTime.Now;
-            //item.Id = _context.logs.Count();
+            item.Id = _context.logs.Count() + 1;
             _context.logs.Add(item);
             await _context.SaveChangesAsync();
 
