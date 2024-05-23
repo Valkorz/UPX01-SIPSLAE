@@ -9,11 +9,11 @@ namespace tools{
 
     public static class Statistics{
         
-        public const double Treshold = 7.0;
+        public const int Treshold = 9;
         public static async Task<double> OverflowFrequency(DbSet<MonitorBacklog> database)
         {
             var records = await database.ToListAsync();
-            int overflowCount = records.Count(record => record.WaterLevel > Treshold);
+            int overflowCount = records.Count(record => record.WaterLevel > (double)Treshold);
             double frequency = (double)overflowCount / records.Count;
             return frequency;
         }

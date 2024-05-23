@@ -3,6 +3,7 @@ using System;
 using DataView.Controllers;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataView.Migrations
 {
     [DbContext(typeof(MonitorContext))]
-    partial class MonitorContextModelSnapshot : ModelSnapshot
+    [Migration("20240523123914_DataView_upd1")]
+    partial class DataView_upd1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.5");
@@ -25,9 +28,6 @@ namespace DataView.Migrations
 
                     b.Property<bool>("IsRaining")
                         .HasColumnType("INTEGER");
-
-                    b.Property<double>("MinuteInterval")
-                        .HasColumnType("REAL");
 
                     b.Property<int>("Month")
                         .HasColumnType("INTEGER");

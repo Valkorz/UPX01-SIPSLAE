@@ -129,3 +129,4 @@ C:\Users\pivar\Documents\UPX\UPX-01\UPX01-SIPSLAE\src\api\SIPSLAE.api\DataView\o
 C:\Users\pivar\Documents\UPX\UPX-01\UPX01-SIPSLAE\src\api\SIPSLAE.api\DataView\obj\Debug\net8.0\ref\DataView.dll
 C:\Users\pivar\Documents\UPX\UPX-01\UPX01-SIPSLAE\src\api\SIPSLAE.api\DataView\bin\Debug\net8.0\tools\obj\project.assets.json
 C:\Users\pivar\Documents\UPX\UPX-01\UPX01-SIPSLAE\src\api\SIPSLAE.api\DataView\bin\Debug\net8.0\tools\obj\tools.csproj.nuget.dgspec.json
+C:\Users\pivar\Documents\UPX\UPX-01\UPX01-SIPSLAE\src\api\SIPSLAE.api\DataView\bin\Debug\net8.0\CsvHelper.dll
