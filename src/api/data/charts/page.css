@@ -1,0 +1,54 @@
+body{
+    text-align: center;
+}
+header{
+    position: absolute;
+}
+
+#background{
+    background-color:aliceblue;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+
+    background-image: radial-gradient(rgb(223, 240, 255), 5px, transparent 1px),
+    radial-gradient(rgb(223, 240, 255), 5px, transparent 1px);
+    background-size: 30px 30px;
+    background-position: 0 0, 15px 15px;    
+    animation: move 1s linear infinite;
+
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 150%;
+}
+
+#canvasbg{
+    background-color: rgba(223, 240, 255, 0.5);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+    border-radius: 5%;
+    transform: translate(0, 35%);
+    position: absolute;
+}
+
+#data{
+    background-color: rgba(223, 240, 255, 0.5);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+    border-radius: 5%;
+    position: absolute;
+    width: auto;
+    height: auto;
+    font-size: 50%;
+    transform: translate(450%, 50%);
+}
+
+
+
+
+@keyframes move {
+    0% {
+        background-position: 0 0, 15px 15px;
+    }
+    100% {
+        background-position: 30px 30px, 45px 45px;
+    }
+}

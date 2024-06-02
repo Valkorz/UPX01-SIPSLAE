@@ -89,7 +89,7 @@ namespace DataView.Controllers
         }
 
         [HttpGet("variation")]
-        public async Task<double> GetVariationAverage([FromQuery] int fromLast){
+        public async Task<double> GetVariationAverage([FromQuery] int fromLast = 5){
             var lastItems = await _context.logs.ToListAsync();
             float averageVariation = 0.0f;
             if(lastItems.Count() > 0){

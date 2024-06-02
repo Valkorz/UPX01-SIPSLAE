@@ -2,8 +2,35 @@
 //const Chart = require('chart.js'); if running in Node.js
 //Fetch data
 
+const scale = 15;
 
-const url = "http://192.168.15.3:5000/monitor/getLevels?n=15";
+const url = `http://192.168.15.9:5000/monitor/getLevels?n=${scale}`;
+const varUrl = `http://192.168.15.9:5000/monitor/variation?fromLast=${scale}`;
+const freqUrl = "http://192.168.15.9:5000/monitor/frequency";
+
+let scl = document.getElementById('scale');
+scl.textContent = `${scale} measures`;
+
+fetch(varUrl)
+    .then(response => response.json())
+    .then(data => {
+        const variation = Math.round(parseFloat(data) * 100) / 100;
+        let varLabel = document.getElementById('variation');
+        varLabel.textContent = `${variation} units`;
+        console.log(`variation: ${variation}`)
+    })
+    .catch(error => console.error('Error:', error));
+
+
+fetch(freqUrl)
+    .then(response => response.json())
+    .then(data => {
+        const frequency = Math.round(parseFloat(data) * 100);
+        let freqLabel = document.getElementById('freq');
+        freqLabel.textContent = `${frequency}%`;
+        console.log(`frequency: ${frequency}`)
+    })
+    .catch(error => console.error('Error:', error));
 
 fetch(url)
     .then(response => response.json())

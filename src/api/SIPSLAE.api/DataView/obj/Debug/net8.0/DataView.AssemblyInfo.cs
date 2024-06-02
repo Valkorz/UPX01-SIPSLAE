@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DataView")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c0ab09130d80e44d3ef8f8eabf10284361077493")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5b0438418e0d04d82bde96e407d43e3119ce74f0")]
 [assembly: System.Reflection.AssemblyProductAttribute("DataView")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DataView")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
